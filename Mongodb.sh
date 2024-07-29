@@ -21,7 +21,7 @@ else
 fi 
 
 Method_Calling(){
-    if [ $1 -ne 0]
+    if [ $1 -ne 0 ]
     then
         echo -e "$2 $R Failed $N"
     else
