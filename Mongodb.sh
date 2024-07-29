@@ -12,14 +12,6 @@ LOGFILE="/tmp/$0-$TimeStamp.log"
 
 echo "Script stareted Executing at $TimeStamp" $>> $LOGFILE
 
-if [ $ID -ne 0 ]
-then
-    echo -e "$R Error:: Please run this script with root access $N"
-    exit 1
-else
-    echo -e "$Y You are root user"
-fi 
-
 Method_Calling(){
     if [ $1 -ne 0 ]
     then
@@ -29,6 +21,16 @@ Method_Calling(){
          echo -e "$2 $G Success $N"
     fi
 }
+
+if [ $ID -ne 0 ]
+then
+    echo -e "$R Error:: Please run this script with root access $N"
+    exit 1
+else
+    echo -e "$Y You are root user"
+fi 
+
+
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
