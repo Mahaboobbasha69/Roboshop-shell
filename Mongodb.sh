@@ -32,7 +32,7 @@ fi
 
 
 
-cp Mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
 Method_Calling  $? "Copyed Mongodb repo" 
 
