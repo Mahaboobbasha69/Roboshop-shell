@@ -33,15 +33,15 @@ cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
 Method_Calling  $? "Copyed Mongodb repo" 
 
-dnf install mongodb-org -y 
+dnf install mongodb-org -y &>> $LOGFILE
 
-Method_Calling $? "installing mongo &>> $LOGFILE
+Method_Calling $? "installing mongo
 
 systemctl enable mongod &>> $LOGFILE
 
 Method_Calling $? "Enableing the mongodb
 
-systemctl start mongod
+systemctl start mongod &>> $LOGFILE
 
 Method_Calling $? "Stared mongodb"
 
