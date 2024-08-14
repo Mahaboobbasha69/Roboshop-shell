@@ -1,9 +1,9 @@
 #!/bin/bash
 #ami-0b4f379183e5706b9
 AMI=ami-0b4f379183e5706b9 #this keeps on changing
-SG_ID=sg-087e7afb3a936fce7 #replace with your SG ID
+SG_ID=sg-07902b2ea6074505c #replace with your SG ID
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
-ZONE_ID=Z104317737D96UJVA7NEF # replace your zone ID
+ZONE_ID=ZZ08215043T0QXKPBPESRN # replace your zone ID
 DOMAIN_NAME="bashadevopsaws.online"
 
 for i in "${INSTANCES[@]}"
