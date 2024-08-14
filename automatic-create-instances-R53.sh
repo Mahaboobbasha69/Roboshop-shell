@@ -4,6 +4,7 @@ SG_ID=sg-07902b2ea6074505c #replace with your SG ID (it's in EC2 instance)
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 ZONE_ID=ZZ08215043T0QXKPBPESRN # replace your zone ID (it's in Route53)
 DOMAIN_NAME="bashadevopsaws.online"
+#bashadevopsaws.online
 
 for i in "${INSTANCES[@]}"
 do
@@ -14,7 +15,7 @@ do
         INSTANCE_TYPE="t2.micro"
     fi
 
-    IP_ADDRESS=$(aws ec2 run-instances --image-id $AMI --instance-type $INSTANCE_TYPE --security-group-ids sg-087e7afb3a936fce7 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text)
+    IP_ADDRESS=$(aws ec2 run-instances --image-id $AMI --instance-type $INSTANCE_TYPE --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text)
     echo "$i: $IP_ADDRESS"
 
     #create R53 record, make sure you delete existing record
