@@ -1,5 +1,4 @@
 #!/bin/bash
-#ami-0b4f379183e5706b9
 AMI=ami-0b4f379183e5706b9 #this keeps on changing (it's in EC2 instance)
 SG_ID=sg-07902b2ea6074505c #replace with your SG ID (it's in EC2 instance)
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
