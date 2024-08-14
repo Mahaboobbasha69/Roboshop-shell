@@ -1,9 +1,9 @@
 #!/bin/bash
 
 AMI=ami-0b4f379183e5706b9 #this keeps on changing (it's in EC2 instance)
-SG_ID=sg-07902b2ea6074505c #replace with your security-group (it's in EC2 instance)
+SG_ID=sg-07902b2ea6074505c #replace with your SG ID (it's in EC2 instance)
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
-ZONE_ID=Z08215043T0QXKPBPESRN # replace your zone ID (it's in Route53)
+ZONE_ID=ZZ08215043T0QXKPBPESRN # replace your zone ID (it's in Route53)
 DOMAIN_NAME="bashadevopsaws.online"
 
 for i in "${INSTANCES[@]}"
